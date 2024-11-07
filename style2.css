@@ -1,0 +1,135 @@
+/* Body and Background */
+body {
+    background-image: url('bg.JPG'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    min-height: 100vh; /* Ensures the body takes the full height of the screen */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Container for the main content */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    backdrop-filter: blur(15px); /* Glass effect */
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid rgba(78, 140, 255, 0.5);
+}
+
+/* Header Styling */
+h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(78, 140, 255, 1); /* Glowing text shadow */
+}
+
+/* Glowing White Color for Labels */
+form label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+form label:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+/* Form Input Styling */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(78, 140, 255, 0.5);
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+/* Form Input Focus */
+.form-control:focus {
+    border-color: rgba(78, 140, 255, 1);
+    box-shadow: 0 0 10px rgba(78, 140, 255, 0.8);
+    outline: none;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #4e8cff; /* Initial button color */
+    color: #fff;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px rgba(78, 140, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Button Hover Effects */
+.btn:hover {
+    background-color: #fff;
+    color: #4e8cff;
+    box-shadow: 0 0 20px rgba(78, 140, 255, 1), 0 0 40px rgba(78, 140, 255, 1);
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+    animation: glow 1.5s infinite alternate; /* Glowing effect */
+}
+
+/* Glow Animation for Buttons */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(78, 140, 255, 0.7), 0 0 20px rgba(78, 140, 255, 1);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(78, 140, 255, 1), 0 0 35px rgba(78, 140, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(78, 140, 255, 0.7), 0 0 20px rgba(78, 140, 255, 1);
+    }
+}
+
+/* Success SweetAlert Styling */
+.swal2-popup {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 10px;
+    border: 2px solid rgba(78, 140, 255, 0.5);
+}
+
+.swal2-title {
+    font-size: 24px;
+    color: rgba(78, 140, 255, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+}
