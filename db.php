@@ -2,8 +2,8 @@
 // db.php
 $host = 'localhost';
 $dbname = 'ubuntu'; // Updated to your specified database name
-$username = 'root';
-$password = ''; // Replace with your MySQL password if set
+$username = 'kirkpagaspas';
+$password = 'kirkpagaspas'; // Replace with your MySQL password if set
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
