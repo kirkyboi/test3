@@ -1,57 +1,79 @@
+<?php
+include 'db.php';
+
+// Fetch all users from the database
+$sql = "SELECT * FROM students";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$students = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY FIRST UBUNTU PROJECT DEPLOYMENT</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>BSIT-4A</title>
     <link rel="stylesheet" href="style1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert script -->
 </head>
 <body>
-    <div class="container mt-5">
-        <p>MY FIRST UBUTN PROJECT DEPLOYMENT</p>
-        <form action="submit.php" method="POST">
-            <!-- First Name -->
-            <div class="mb-3">
-                <label for="firstname" class="form-label">First Name:</label>
-                <input type="text" class="form-control" id="firstname" name="firstname" required>
-            </div>
+<div class="container mt-5">
+    <h2>MY FIRST UBUNTU PROJECT DEPLOYMENT</h2>
+    <a href="create.php" class="btn btn-success mb-3">Add New User</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Course & Section</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($students as $student): ?>
+                <tr>
+                    <td><?= htmlspecialchars($student['id']) ?></td>
+                    <td><?= htmlspecialchars($student['firstname']) ?></td>
+                    <td><?= htmlspecialchars($student['middlename']) ?></td>
+                    <td><?= htmlspecialchars($student['lastname']) ?></td>
+                    <td><?= htmlspecialchars($student['age']) ?></td>
+                    <td><?= htmlspecialchars($student['address']) ?></td>
+                    <td><?= htmlspecialchars($student['course_section']) ?></td>
+                    <td>
+                        <a href="edit.php?id=<?= $student['id'] ?>" class="btn btn-primary">Edit</a>
+                        <a href="#" class="btn btn-danger" onclick="confirmDelete(<?= $student['id'] ?>)">Delete</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
 
-            <!-- Middle Name -->
-            <div class="mb-3">
-                <label for="middlename" class="form-label">Middle Name:</label>
-                <input type="text" class="form-control" id="middlename" name="middlename">
-            </div>
+<!-- SweetAlert Delete Confirmation Script -->
+<script>
+function confirmDelete(id) {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "Do you really want to delete this user?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Redirect to delete.php with the specific ID
+            window.location.href = 'delete.php?id=' + id;
+        }
+    });
+}
+</script>
 
-            <!-- Last Name -->
-            <div class="mb-3">
-                <label for="lastname" class="form-label">Last Name:</label>
-                <input type="text" class="form-control" id="lastname" name="lastname" required>
-            </div>
-
-            <!-- Age -->
-           <div class="mb-3">
-                <label for="lastname" class="form-label">Age:</label>
-                <input type="text" class="form-control" id="Age" name="lastname" required>
-            </div>
-
-            <!-- Address -->
-            <div class="mb-3">
-                <label for="address" class="form-label">Address:</label>
-                <input type="text" class="form-control" id="address" name="address" required>
-            </div>
-
-            <!-- Course & Section -->
-            <div class="mb-3">
-                <label for="course_section" class="form-label">Course & Section:</label>
-                <input type="text" class="form-control" id="course_section" name="course_section" required>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
