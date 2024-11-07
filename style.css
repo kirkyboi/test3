@@ -1,0 +1,116 @@
+/* Body and Background */
+body {
+    background-image: url('bg.JPG'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    min-height: 100vh; /* Ensures the body takes the full height of the screen */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Transparent Glassmorphism Effect for the Login Form */
+form {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Adds the glass effect */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px; /* Limits the width to make it compact */
+    transition: all 0.3s ease-in-out;
+    position: relative; /* To position the border effect */
+    border: 2px solid transparent; /* Initial transparent border */
+    animation: neonBorder 3s linear infinite; /* Multi-color running border animation */
+}
+
+/* Form Inputs and Buttons Styling */
+form input, form button {
+    background: rgba(255, 255, 255, 0.2); /* Slightly transparent inputs */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle border */
+    color: #fff; /* Text color for inputs */
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Remove default focus outline */
+form input:focus, form button:focus {
+    outline: none;
+}
+
+/* Neon Hover Effect with RGBA for Button */
+form button {
+    background-color: #4e8cff; /* Initial button color */
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid transparent;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(78, 140, 255, 0.7), 0 0 10px rgba(78, 140, 255, 0.7), 0 0 20px rgba(78, 140, 255, 0.7), 0 0 30px rgba(78, 140, 255, 0.7);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Hover effect with RGBA neon glow animation */
+form button:hover {
+    background-color: #fff;
+    color: #4e8cff;
+    box-shadow: 0 0 15px rgba(78, 140, 255, 1), 0 0 30px rgba(78, 140, 255, 1), 0 0 50px rgba(78, 140, 255, 1), 0 0 75px rgba(78, 140, 255, 1);
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+    animation: neonGlow 1.5s ease-in-out infinite alternate; /* Neon glow animation */
+}
+
+/* Animation for Neon Glow */
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(78, 140, 255, 0.7), 0 0 20px rgba(78, 140, 255, 0.7), 0 0 30px rgba(78, 140, 255, 0.7), 0 0 40px rgba(78, 140, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(78, 140, 255, 1), 0 0 40px rgba(78, 140, 255, 1), 0 0 60px rgba(78, 140, 255, 1), 0 0 80px rgba(78, 140, 255, 1);
+    }
+}
+
+/* Multi-color Running Neon Border Effect */
+@keyframes neonBorder {
+    0% {
+        border-color: rgba(78, 140, 255, 1); /* Blue */
+    }
+    25% {
+        border-color: rgba(255, 78, 140, 1); /* Pink */
+    }
+    50% {
+        border-color: rgba(140, 255, 78, 1); /* Green */
+    }
+    75% {
+        border-color: rgba(255, 255, 78, 1); /* Yellow */
+    }
+    100% {
+        border-color: rgba(78, 140, 255, 1); /* Back to Blue */
+    }
+}
+
+/* Form Label Styling */
+form label {
+    color: white; /* Set label text color to white */
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Success Alert Styling */
+.swal2-popup {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-radius: 10px;
+    color: #fff !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.swal2-title {
+    font-size: 22px;
+    color: #4e8cff;
+}
