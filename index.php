@@ -19,7 +19,7 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <div class="container mt-5">
-    <h2>MY FIRST UBUNTU PROJECT DEPLOYMENT</h2>
+    <h2>BSIT-4A</h2>
     <a href="create.php" class="btn btn-success mb-3">Add New User</a>
     <table class="table table-bordered">
         <thead>
