@@ -1,0 +1,167 @@
+/* Body and Background */
+body {
+    background-image: url('bg.JPG'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    min-height: 100vh; /* Ensures the body takes the full height of the screen */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Container for the main content */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    backdrop-filter: blur(15px); /* Stronger glass effect */
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 1300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid rgba(78, 140, 255, 0.5);
+    animation: pulse 3s infinite ease-in-out; /* Animation for pulsing effect */
+}
+
+/* Header Styling */
+h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(78, 140, 255, 1); /* Glowing text shadow */
+}
+
+/* Button Styling */
+.btn {
+    background-color: #4e8cff; /* Initial button color */
+    color: #fff;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px rgba(78, 140, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Button Hover Effects */
+.btn:hover {
+    background-color: #fff;
+    color: #4e8cff;
+    box-shadow: 0 0 20px rgba(78, 140, 255, 1), 0 0 40px rgba(78, 140, 255, 1);
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+    animation: glow 1.5s infinite alternate; /* Glowing effect */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(78, 140, 255, 0.5);
+    box-shadow: 0 0 20px rgba(78, 140, 255, 0.5);
+}
+
+/* Table Header Styling */
+th {
+    background-color: rgba(78, 140, 255, 0.8);
+    color: #fff;
+    padding: 16px 20px;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(78, 140, 255, 1);
+    box-shadow: 0 0 10px rgba(78, 140, 255, 0.5);
+}
+
+/* Table Data Styling */
+td {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 2px solid rgba(78, 140, 255, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Table Row Hover Effect */
+tr:hover {
+    background-color: rgba(78, 140, 255, 0.2);
+    box-shadow: 0 0 15px rgba(78, 140, 255, 0.5);
+}
+
+/* Neon Hover Effects for Table Buttons */
+.btn-primary, .btn-danger {
+    border-radius: 5px;
+    padding: 8px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Neon Button Hover Effects for Table Edit/Delete Buttons */
+.btn-primary:hover, .btn-danger:hover {
+    box-shadow: 0 0 15px rgba(78, 140, 255, 1), 0 0 30px rgba(78, 140, 255, 1);
+    transform: scale(1.1);
+}
+
+/* Pulse Animation for Container */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 30px rgba(78, 140, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(78, 140, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(78, 140, 255, 0.5);
+    }
+}
+
+/* Glowing Animation for Buttons */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(78, 140, 255, 0.7), 0 0 20px rgba(78, 140, 255, 1);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(78, 140, 255, 1), 0 0 35px rgba(78, 140, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(78, 140, 255, 0.7), 0 0 20px rgba(78, 140, 255, 1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
